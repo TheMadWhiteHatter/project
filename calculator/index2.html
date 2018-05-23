@@ -1,0 +1,94 @@
+<script>
+function createPopup(calculator){
+newwindow2 = window.open('','name','scrollbars=yes,height=600,width=800,toolbar=1,resizable=0');
+//newwindow2 = window.open("",
+    //                    "name",
+      //                  "toolbar=no,
+          //               width=400,height=300,
+              //           directories=no,
+                  //       status=no,
+                     //    scrollbars=yes,
+                       //  resize=no,
+                       //  menubar=no");
+}
+{
+newwindow2 .moveTo(50,50);
+var tmp = newwindow2.document;
+tmp.write('<html><head><title> calculator</title>');
+tmp.write('<style>@import "css/style.css";</style>');
+tmp.write('</head><body>');
+tmp.write('calculator');
+tmp.write('<table border = "2">');
+	tmp.write('<tr>');
+			tmp.write('<td>');
+			tmp.write('<span class = "textcolor">');
+			tmp.write('calculator');
+			tmp.write('</span>');
+			tmp.write('<br />');
+			tmp.write('<span style= "background: #''";>');
+			tmp.write('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+			tmp.write('</span>');
+			tmp.write('</td>');
+
+	tmp.write('</tr>');
+
+tmp.write('</table>');
+tmp.write('</body></html>');
+tmp.close();
+
+const input = document.querySelector('.input');
+const result = document.querySelector('.result');
+let value = ''
+
+function calculate() {
+  _r = eval(value);
+  result.innerHTML = _r;
+  clean(input);
+//   reset the value
+  value = ''
+}
+}
+function push(n) {
+//   upper limit
+  value = value + `${n}`;
+  input.append(`${n}`);
+  clean(result);
+}
+
+function clean(elem) {
+  elem.innerHTML = '';
+}
+
+</script>
+<body>
+  <title>Calculator Project Mark VII</title>
+    </div>
+        <div class="wrapper"></div>
+        <div class="input"></div>
+        <div class="result"></div>
+        <div class="buttons"></div>
+          <div id = "calculator">
+            <form  name = "f1">calculator<br />
+              <span style= >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <input type = "button" value = "calculator"  onClick = "createPopup(255,200,0);" />
+              </form>
+              </div>
+              <div>
+              <buttons class="num-btn" onclick="push(1)">1</buttons>
+              <buttons class="num-btn" onclick="push(2)">2</buttons>
+              <buttons class="num-btn" onclick="push(3)">3</buttons>
+              <buttons class="num-btn" onclick="push(4)">4</buttons>
+              <buttons class="num-btn" onclick="push(5)">5</buttons>
+              <buttons class="num-btn" onclick="push(6)">6</buttons>
+              <buttons class="num-btn" onclick="push(7)">7</buttons>
+              <buttons class="num-btn" onclick="push(8)">8</buttons>
+              <buttons class="num-btn" onclick="push(9)">9</buttons>
+              <buttons class="num-btn" onclick="push(0)">0</buttons>
+              <buttons class="sym-btn" onclick="push('*')">*</buttons>
+              <buttons class="sym-btn" onclick="push('+')">+</buttons>
+              <buttons class="sym-btn" onclick="push('-')">-</buttons>
+              <buttons class="sym-btn" onclick="push('/')">/</buttons>
+              <buttons class="eq-btn" onclick="calculate()">=</buttons>
+              </div>
+
+</body>
